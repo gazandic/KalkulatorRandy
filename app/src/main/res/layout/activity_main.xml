@@ -340,7 +340,7 @@
                         android:text="CV 4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/textView21" />
+                        android:id="@+id/textView22" />
 
                     <EditText
                         android:layout_width="wrap_content"
@@ -430,6 +430,18 @@
                         android:inputType="numberSigned"
                         android:ems="10"
                         android:id="@+id/editText23" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <TextView
+                        android:text="Total Tonase"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView28" />
+
                 </TableRow>
             </TableLayout>
         </LinearLayout>

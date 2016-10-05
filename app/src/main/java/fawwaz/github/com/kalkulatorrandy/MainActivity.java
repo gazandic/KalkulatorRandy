@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -17,6 +18,7 @@ public class MainActivity extends ActionBarActivity {
     EditText tonase_3_text;
     EditText tonase_4_text;
     EditText tonase_5_text;
+    TextView tonase_total;
     EditText vm_1_text;
     EditText vm_2_text;
     EditText vm_3_text;
@@ -98,31 +100,8 @@ public class MainActivity extends ActionBarActivity {
         vm_blending_text = (EditText) findViewById(R.id.editText21);
         ts_blending_text = (EditText) findViewById(R.id.editText22);
         cv_blending_text = (EditText) findViewById(R.id.editText23);
-
-        tonase_1_text.setText("1");
-        tonase_2_text.setText("1");
-        tonase_3_text.setText("1");
-        tonase_4_text.setText("1");
-        tonase_5_text.setText("1");
-        vm_1_text.setText("0");
-        vm_2_text.setText("0");
-        vm_3_text.setText("0");
-        vm_4_text.setText("0");
-        vm_5_text.setText("0");
-        ts_1_text.setText("0");
-        ts_2_text.setText("0");
-        ts_3_text.setText("0");
-        ts_4_text.setText("0");
-        ts_5_text.setText("0");
-        cv_1_text.setText("0");
-        cv_2_text.setText("0");
-        cv_3_text.setText("0");
-        cv_4_text.setText("0");
-        cv_5_text.setText("0");
-        vm_blending_text.setText("0");
-        ts_blending_text.setText("0");
-        cv_blending_text.setText("0");
-
+        tonase_total = (TextView) findViewById(R.id.textView28);
+        tonase_total.setVisibility(View.INVISIBLE);
         Button b = (Button) findViewById(R.id.button);
         b.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -154,6 +133,9 @@ public class MainActivity extends ActionBarActivity {
                 float ts_blending = ts_1_float * tonase_1_float + ts_2_float * tonase_2_float + ts_3_float * tonase_3_float + ts_4_float * tonase_4_float + ts_5_float * tonase_5_float;
                 float cv_blending = cv_1_float * tonase_1_float + cv_2_float * tonase_2_float + cv_3_float * tonase_3_float + cv_4_float * tonase_4_float + cv_5_float * tonase_5_float;
 
+                tonase_total.setText("Total Tonase : "+String.valueOf(total_tonase));
+
+                tonase_total.setVisibility(View.VISIBLE);
                 vm_blending_float = vm_blending / total_tonase;
                 ts_blending_float = ts_blending / total_tonase;
                 cv_blending_float = cv_blending / total_tonase;
